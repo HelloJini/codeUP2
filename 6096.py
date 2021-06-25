@@ -11,11 +11,11 @@ for i in range(19):
 
 n = int(input())
 for i in range(n):
-    x,y = input().split()
+    x, y = input().split()
     x = int(x)
     y = int(y)
     for j in range(1, 20):
-        if d[j][y]==0:
+        if d[j][y] == 0:
             d[j][y] = 1
         else:
             d[j][y] = 0
@@ -24,7 +24,7 @@ for i in range(n):
             d[x][j] = 1
         else:
             d[x][j] = 0
-        
+
 for i in range(1, 20):
     for j in range(1, 20):
         print(d[i][j], end=' ')
