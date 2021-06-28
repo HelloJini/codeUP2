@@ -1,23 +1,20 @@
-d = []
-w, h = map(int, input().split( ))
-for i in range(h):
-    d.append([])
-    for j in range(w):
-        d[i].append(0)
+h, w = map(int, input().split())
+q = []
+for i in range(h+1):
+    q.append([])
+    for j in range(w+1):
+        q[i].append(0)
 
 n = int(input())
-for k in range(n):
-    l, f, x, y = map(int, input().split())
-    x = int(x)
-    y = int(y)
-    for i in range(h):
-        if(f==1):
-            d[x+1][y+1] = 1
-        for j in range(l):
-            if(f==0):
-                d[x][y] = 1
+for i in range(n):
+    l, d, x, y = map(int, input().split())
+    for j in range(l):
+        if(d==0):
+            q[x][y+j] = 1
+        else:
+            q[x+j][y] = 1
 
-for i in range(1, h):
-    for j in range(1, w):
-        print(d[i][j], end=' ')
+for i in range(1, h+1):
+    for j in range(1, w+1):
+        print(q[i][j], end=' ')
     print()
